@@ -14,8 +14,11 @@ module.exports.getTodos = (req, res) => {
 module.exports.getTodoById = (req, res) => {
   const { id } = req.params;
   const findTodo = Todos.getTodoById(id);
-  if (findTodo) res.status(200).send(findTodo);
-  else res.status(404).send('todo was not found');
+  if (findTodo) {
+    res.status(200).send(findTodo);
+  } else {
+    res.status(404).send('todo was not found');
+  }
 };
 
 module.exports.updateTodoById = (req, res) => {
