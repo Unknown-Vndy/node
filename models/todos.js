@@ -31,6 +31,21 @@ class TodosDB {
     const findIndex = this.todos.findIndex(t => t.id === +id);
     return findIndex === -1 ? null : this.todos[findIndex];
   };
+
+  updateTodoById = (id, newInfo) => {
+    const foundTodoIndexToUpdate = this.todos.findIndex(t => t.id === +id);
+
+    if (foundTodoIndexToUpdate !== -1) {
+      this.todos[foundTodoIndexToUpdate] = {
+        ...this.todos[foundTodoIndexToUpdate],
+        ...newInfo
+      };
+    }
+
+    return foundTodoIndexToUpdate === -1
+      ? null
+      : this.todos[foundTodoIndexToUpdate];
+  };
 }
 
 const todosDbInstace = new TodosDB(todosDB);
