@@ -1,9 +1,18 @@
-#check create todo
+###check create todo
 POST http://localhost:5000/todos HTTP/1.1
 Content-Type: application/json
 
 {
   "title": "Test",
+  "body": "second task"
+}
+
+###check create 422 error
+POST http://localhost:5000/todos HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "",
   "body": "second task"
 }
 
