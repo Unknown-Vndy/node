@@ -9,7 +9,11 @@ app.post('/todos', validate.validateTodoOnCreate, todosController.createTodo);
 app.get('/todos', todosController.getTodos);
 app.get('/todos/:id', todosController.getTodoById);
 
-app.patch('/todos/:id', todosController.updateTodoById);
+app.patch(
+  '/todos/:id',
+  validate.validateTodoOnUpdate,
+  todosController.updateTodoById
+);
 
 app.delete('/todos/:id', todosController.deleteTodoById);
 
