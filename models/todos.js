@@ -46,6 +46,14 @@ class TodosDB {
       ? null
       : this.todos[foundTodoIndexToUpdate];
   };
+
+  deleteTodoById = id => {
+    const foundTodoIndexToDelete = this.todos.findIndex(t => t.id === +id);
+
+    return foundTodoIndexToDelete === -1
+      ? null
+      : this.todos.splice(foundTodoIndexToDelete, 1);
+  };
 }
 
 const todosDbInstace = new TodosDB(todosDB);

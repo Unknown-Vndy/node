@@ -10,4 +10,6 @@ app.get('/todos/:id', todosController.getTodoById);
 
 app.patch('/todos/:id', todosController.updateTodoById);
 
+app.delete('/todos/:id', todosController.deleteTodoById);
+
 module.exports = app;

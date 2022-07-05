@@ -28,3 +28,8 @@ Content-Type: application/json
 {
   "isDone": false
 }
+### delete successful todo
+DELETE  http://127.0.0.1:5000/todos/1 HTTP/1.1
+
+### delete not exist todo
+DELETE  http://127.0.0.1:5000/todos/2 HTTP/1.1

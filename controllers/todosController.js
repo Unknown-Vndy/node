@@ -31,3 +31,13 @@ module.exports.updateTodoById = (req, res) => {
   }
   res.status(404).send('Todo not found');
 };
+
+module.exports.deleteTodoById = (req, res) => {
+  const { id } = req.params;
+  const deletedTodo = Todos.deleteTodoById(id);
+
+  if (deletedTodo) {
+    return res.status(204).send();
+  }
+  res.status(404).send('todo no found');
+};
